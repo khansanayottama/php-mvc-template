@@ -2,12 +2,12 @@
 
 class Controller
 {
-   protected function view($view, $data = [])
+   public static function view($view, $data = [])
    {
       require_once 'app/views/' . $view . '.php';
    }
 
-   protected function model($model)
+   public static function model($model)
    {
       require_once 'app/models/' . $model . '.php';
    }

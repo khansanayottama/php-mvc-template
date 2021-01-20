@@ -1,6 +1,6 @@
 <?php
 
-class Home extends Controller
+class Home
 {
    public function index()
    {
@@ -8,8 +8,8 @@ class Home extends Controller
       $data['title'] = 'Home';
 
       // PAGE VIEW
-      $this->view('templates/header', $data);
-      $this->view('home/index');
-      $this->view('templates/footer');
+      Controller::view('templates/header', $data);
+      Controller::view('home/index');
+      Controller::view('templates/footer');
    }
 }

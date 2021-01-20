@@ -10,7 +10,7 @@ class App
    {
       $url = $this->parseURL();
 
-      // ===== CONTROLLER =====
+      // =========== CONTROLLER ==========
       // jika url tidak dimasukkan maka akan ke halaman default(index)
       if (!$url) {
          $url = [$this->controller];
@@ -27,7 +27,7 @@ class App
       // instansiasi class controller
       $this->controller = new $this->controller;
 
-      // ===== METHOD =====
+      // ========== METHOD ==========
       // jika methodnya ada maka isi property controller sesuai request
       if (isset($url[1])) {
          if (method_exists($this->controller, $url[1])) {
@@ -36,7 +36,7 @@ class App
          }
       }
 
-      // ===== PARAMS =====
+      // ========== PARAMS ==========
       // jika params ada maka isi property params sesuai dengan request
       if (!empty($url)) {
          $this->params = array_values($url);
